@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reset CSS */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #5e3bee;
+  --color-secondary: #ff9e44;
+  --color-light-blue: #eef4ff;
+  --color-dark-blue: #1c2752;
+  --color-light-gray: #f5f5f5;
+}
+
+/* Remove debug styles */
+/* * {
+  outline: 1px solid rgba(255, 0, 0, 0.1);
+} */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  @apply text-gray-700;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white py-3 px-7 rounded-full hover:opacity-90 transition-all font-medium hover:shadow-button;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white py-3 px-7 rounded-full hover:opacity-90 transition-all font-medium hover:shadow-lg;
+  }
+  
+  .section-padding {
+    @apply py-24 px-4 md:px-10 lg:px-20;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4 text-darkBlue;
+  }
+  
+  .section-subtitle {
+    @apply text-gray-600 mb-12 max-w-2xl mx-auto;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-card p-6 transition-all hover:shadow-lg;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+}
+
+/* Additional Global Styles */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease-in;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s ease-in;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.zoom-in {
+  animation: zoomIn 0.5s ease-in;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

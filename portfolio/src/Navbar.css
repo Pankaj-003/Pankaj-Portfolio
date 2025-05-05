@@ -1,0 +1,49 @@
+.progle-main{
+  /* border: 1px solid #f66e6e; */
+height: 600px;
+left: 100px;
+}
+
+/* .hero-main{
+    border: 1px solid #090909;
+} */
+.main-circle-shape{
+    border: 1px solid #090909;
+    top: 25%;
+    right: 60px;
+
+}
+.small-shape{
+    border: 1px solid #090909;
+    /* bottom: -20%; */
+    /* left: 20%; */
+    height: 150px;
+    width: 150px;
+    top: 72%;
+    left: 14%;
+}
+.dot-b{
+    /* border: 1px solid #090909; */
+    bottom: 0;
+    right: -25%;
+    /* bottom: -80%; */
+    /* left: -100px; */
+    /* margin-left: 500px; */
+    top: 60%;
+}
+.dot-t{
+  /* border: 1px solid #090909; */
+  left: 5%;
+}
+/* .dot-b-main{
+    border: 1px solid #090909;
+    
+} */
+ .arrow1{
+    /* border: 1px solid #090909; */
+    top: 10%;
+    left: -6%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+ }

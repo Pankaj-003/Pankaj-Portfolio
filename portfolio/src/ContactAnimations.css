@@ -1,0 +1,326 @@
+/* Confetti Animation */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  top: -20px;
+  animation: confettiDrop 5s ease-in-out forwards;
+  transform-origin: center;
+}
+
+@keyframes confettiDrop {
+  0% {
+    opacity: 1;
+    top: -20px;
+    transform: rotateZ(0deg);
+  }
+  25% {
+    opacity: 1;
+    transform: rotateZ(45deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotateZ(90deg);
+  }
+  75% {
+    opacity: 0.7;
+    transform: rotateZ(135deg);
+  }
+  100% {
+    opacity: 0;
+    top: 100vh;
+    transform: rotateZ(180deg);
+  }
+}
+
+/* Add particle animations to the popup */
+.popup-message.white-theme::before,
+.popup-message.white-theme::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #7B6EF6;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.popup-message.white-theme::before {
+  top: -20px;
+  left: 20px;
+  animation: floatParticle 3s ease-in-out infinite;
+}
+
+.popup-message.white-theme::after {
+  bottom: -20px;
+  right: 20px;
+  animation: floatParticle 2.5s ease-in-out infinite reverse;
+}
+
+@keyframes floatParticle {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-15px) scale(1.5); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Button typing animation */
+.typing-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.typing-button::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  right: 10px;
+  top: 0;
+  background-color: #fff;
+  animation: typing 0.8s infinite;
+}
+
+@keyframes typing {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Loading spinner animation */
+.loading-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Input field animations - with more specificity */
+.white-theme .contact-form .form-group input,
+.white-theme .contact-form .form-group select,
+.white-theme .contact-form .form-group textarea {
+  display: block !important;
+  width: 100% !important;
+  background-color: #f9f9fd !important;
+  border: 2px solid #eeeef7 !important;
+  color: #333333 !important;
+  border-radius: 8px !important;
+  padding: 16px 20px !important;
+  font-size: 1rem !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02) !important;
+  position: relative !important;
+  z-index: 2 !important;
+  opacity: 1 !important;
+  height: auto !important;
+  min-height: 55px !important;
+  visibility: visible !important;
+}
+
+.white-theme .contact-form .form-group textarea {
+  min-height: 120px !important;
+}
+
+.white-theme .contact-form .form-group input:focus,
+.white-theme .contact-form .form-group select:focus,
+.white-theme .contact-form .form-group textarea:focus {
+  border-color: #7B6EF6 !important;
+  box-shadow: 0 0 0 4px rgba(123, 110, 246, 0.15), 0 2px 8px rgba(0,0,0,0.05) !important;
+  background-color: #ffffff !important;
+  outline: none !important;
+  transform: translateY(-1px) !important;
+}
+
+.white-theme .contact-form .form-group input:hover:not(:focus),
+.white-theme .contact-form .form-group select:hover:not(:focus),
+.white-theme .contact-form .form-group textarea:hover:not(:focus) {
+  border-color: #d4d0f9 !important;
+  background-color: #fcfcff !important;
+}
+
+/* Form group animation - with adjusted positioning */
+.white-theme .contact-form .form-group {
+  position: relative !important;
+  margin-bottom: 22px !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+/* Reset any positioning that might interfere */
+.white-theme .contact-form .form-row {
+  position: relative !important;
+  display: flex !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+/* Input label animations - ensure correct display */
+.white-theme .contact-form .form-group label {
+  display: block !important;
+  margin-bottom: 10px !important;
+  font-weight: 600 !important;
+  color: #555555 !important;
+  transition: transform 0.3s ease, color 0.3s ease !important;
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+.white-theme .contact-form .form-group.focused label {
+  transform: translateY(-5px) scale(0.95) !important;
+  color: #7B6EF6 !important;
+}
+
+/* Add disabled button styling */
+.submit-form-btn:disabled {
+  background-color: #b4b4b4 !important;
+  box-shadow: none !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+/* Custom select opening animation */
+.white-theme .contact-form select:focus {
+  animation: selectOpen 0.3s ease forwards;
+}
+
+@keyframes selectOpen {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Contact Image Animations */
+.image-div {
+  animation: fadeInSlideUp 1.2s ease-out forwards;
+}
+
+.image-div img {
+  transition: all 0.6s ease;
+  animation: floatImage 6s ease-in-out infinite;
+}
+
+/* Add hover effect to the image but keep original dimensions */
+.image-div:hover img {
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.2)) brightness(1.05);
+}
+
+@keyframes floatImage {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-15px); }
+  50% { transform: translateY(0); }
+  75% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeInSlideUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation for first page load */
+.sub-contact-section {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.contact-main-section h2, 
+.contact-main-section > div > p {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.contact-links {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Social icons staggered animation */
+.sub-contact-section .flex.space-x-6 a:nth-child(1) {
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.sub-contact-section .flex.space-x-6 a:nth-child(2) {
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: 0.7s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.sub-contact-section .flex.space-x-6 a:nth-child(3) {
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: 0.9s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Make inputs more touch-friendly on mobile */
+@media (max-width: 576px) {
+  .white-theme .contact-form .form-group input,
+  .white-theme .contact-form .form-group select,
+  .white-theme .contact-form .form-group textarea {
+    padding: 14px 16px !important;
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    min-height: 45px !important;
+    border-width: 1px !important;
+  }
+  
+  .white-theme .contact-form .form-group label {
+    font-size: 0.9rem !important;
+    margin-bottom: 6px !important;
+  }
+  
+  .white-theme .submit-form-btn {
+    padding: 14px 20px !important;
+    font-size: 0.95rem !important;
+  }
+  
+  /* Adjust animations for better performance on mobile */
+  .image-div img {
+    animation-duration: 4s !important; /* Smoother on mobile */
+  }
+  
+  /* Make confetti less intensive on mobile */
+  .confetti-piece {
+    opacity: 0.7 !important;
+  }
+}
+
+/* Add responsive styles for modals on mobile */
+@media (max-height: 700px) {
+  .contact-form-overlay {
+    align-items: flex-start !important;
+    padding-top: 50px !important;
+  }
+  
+  .contact-form-container {
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+  }
+} 

@@ -1,0 +1,128 @@
+.process-arrow {
+    /* margin-left: 100px; */
+    right: -15%;
+    width: 90px;
+    height: 90px;
+    top: 0;
+    /* border: 1px solid red; */
+}
+
+/* Process Component Styles - Simplified */
+
+/* Basic animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes simpleFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrowMove {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+/* Apply animations to elements */
+.process-star {
+  animation: simpleFloat 5s ease-in-out infinite;
+}
+
+.process-triangle {
+  animation: simpleFloat 7s ease-in-out infinite;
+}
+
+.process-icon {
+  transition: all 0.3s ease;
+}
+
+.process-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(94, 59, 238, 0.3);
+}
+
+.process-step {
+  animation: fadeIn 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+.process-step:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.process-step:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.process-step:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.process-arrow {
+  position: absolute;
+  /* top: 40px; */
+  right: -30px;
+  /* width: 200px; */
+  height: 30px;
+  z-index: 10;
+  animation: arrowMove 2.5s ease-in-out infinite;
+}
+
+/* .process-arrow svg {
+  width: 100%;
+  height: 100%;
+} */
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+  .process-arrow {
+    display: none;
+  }
+  
+  .process-step {
+    margin-bottom: 2rem;
+  }
+  
+  .process-icon {
+    width: 80px !important;
+    height: 80px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .process-icon {
+    width: 70px !important;
+    height: 70px !important;
+  }
+}
+
+/* Make step layout better for mobile */
+@media (max-width: 768px) {
+  .process-steps-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .process-step-content {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
