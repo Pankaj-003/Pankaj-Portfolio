@@ -292,7 +292,7 @@ const Testimonials = () => {
       </div>
       
       {/* CSS for 3D elements */}
-      <style jsx>{`
+      <style jsx="true">{`
         /* 3D Cube */
         .cube {
           width: 40px;

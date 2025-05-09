@@ -101,12 +101,10 @@ const Projects = () => {
   
   // Update filtered projects when filter changes
   useEffect(() => {
-    console.log("Filter changed to:", filter);
     const newFilteredProjects = filter === 'all' 
       ? projectsData 
       : projectsData.filter(project => project.category === filter);
     
-    console.log("Filtered projects count:", newFilteredProjects.length);
     setFilteredProjects(newFilteredProjects);
     setVisibleProjects(6); // Reset to show first 6 projects when filter changes
     setShowNoMoreMessage(false);
@@ -130,14 +128,6 @@ const Projects = () => {
   
   // Calculate if there are more projects to load
   const hasMoreProjects = visibleProjects < filteredProjects.length;
-  
-  // For debugging - log current state
-  console.log("Current state:", {
-    filter,
-    visibleProjects,
-    totalFiltered: filteredProjects.length,
-    showingProjects: filteredProjects.slice(0, visibleProjects).length
-  });
   
   // Animation variants
   const containerVariants = {

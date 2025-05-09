@@ -32,7 +32,6 @@ const Contact = () => {
       // Here you would typically handle form data (e.g., send it to a backend)
       const formData = new FormData(event.target);
       const data = Object.fromEntries(formData.entries());
-      console.log("Form data:", data); 
       
       setShowForm(false); // Close the form
       setShowPopup(true); // Show the thank you popup

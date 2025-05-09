@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import "../navbar-fix.css";
+import "../navbar-responsive.css";
+import "../navbar-edge-fixes.css";
+import "../navbar-platform-fixes.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload, faBars, faX } from "@fortawesome/free-solid-svg-icons";
 

@@ -12,6 +12,7 @@ import './index.css';
 import './styles.css';
 import './custom.css';
 import './navbar-fix.css';
+import './responsive-utils.css';
 
 function App() {
   const [loading, setLoading] = useState(true);

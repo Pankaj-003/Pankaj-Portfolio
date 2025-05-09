@@ -3,6 +3,8 @@ import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaYoutube, FaFacebook } f
 import profileImg from '../assets/images/HeroSection.png'; // Your profile image
 import ArrowImgone from '../assets/images/Arrow1.png';
 import '../Navbar.css';
+import '../HeroResponsive.css';
+import '../hero-fixes.css';
 
 const Hero = () => {
   const socialLinks = [
