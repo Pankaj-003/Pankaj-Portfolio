@@ -1,0 +1,99 @@
+/* Animation optimizations for Services component */
+
+/* Reduce animation complexity on mobile for better performance */
+@media screen and (max-width: 767px) {
+  /* Use hardware acceleration for animations to improve performance */
+  #services .animate-pulse,
+  #services [animate],
+  #services [whileHover],
+  #services [whileInView] {
+    will-change: transform, opacity !important;
+    transform: translateZ(0) !important;
+  }
+  
+  /* Simplify animations on smaller screens */
+  #services svg path[animate],
+  #services svg path[transition] {
+    transition-duration: 10s !important; /* Reduce animation complexity */
+  }
+  
+  /* Optimize card hover animations */
+  #services [whileHover="hover"] {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  }
+}
+
+/* Pause animations when not in viewport to save resources */
+#services .absolute {
+  content-visibility: auto !important;
+}
+
+/* Optimize decorative animations */
+#services .absolute motion-path {
+  contain: paint layout !important;
+}
+
+#services .rounded-2xl,
+#services .p-6.bg-gray-50.rounded-xl {
+  backface-visibility: hidden !important;
+  transform: translateZ(0) !important;
+}
+
+/* Adjustments for high refresh rate screens */
+@media screen and (min-resolution: 192dpi) {
+  #services [animate],
+  #services [transition] {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+}
+
+/* Reduce animation complexity on low-power devices */
+@media (prefers-reduced-motion: reduce) {
+  #services [animate] {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  #services [whileHover] {
+    transform: none !important;
+  }
+  
+  #services .absolute {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Make sure SVG animations don't cause layout shifts */
+#services svg {
+  overflow: visible !important;
+  contain: layout paint !important;
+}
+
+/* Better mobile interaction states */
+@media (hover: none) {
+  #services .p-6.bg-gray-50.rounded-xl:active {
+    background-color: rgba(237, 233, 254, 0.5) !important;
+    transform: scale(0.98) !important;
+    transition: transform 0.1s ease-out, background-color 0.1s ease-out !important;
+  }
+}
+
+/* Custom properties for animation tuning based on device capability */
+:root {
+  --services-animation-duration: 0.5s;
+  --services-animation-delay: 0.1s;
+}
+
+@media screen and (max-width: 767px) {
+  :root {
+    --services-animation-duration: 0.3s;
+    --services-animation-delay: 0.05s;
+  }
+}
+
+/* Apply custom animation properties */
+#services [initial][whileInView][transition] {
+  transition-duration: var(--services-animation-duration) !important;
+  transition-delay: var(--services-animation-delay) !important;
+} 

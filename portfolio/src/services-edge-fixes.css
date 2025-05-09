@@ -1,0 +1,148 @@
+/* Edge case fixes for the Services component across various devices */
+
+/* Fix for very small screens (Galaxy Fold, etc.) */
+@media screen and (max-width: 320px) {
+  #services h2.text-3xl.md\:text-4xl.lg\:text-5xl {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+  
+  #services .grid.grid-cols-2.md\:grid-cols-3.lg\:grid-cols-6 {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  
+  #services .p-6 {
+    padding: 1rem !important;
+  }
+  
+  #services .text-sm {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Fix for extra large screens */
+@media screen and (min-width: 1536px) {
+  #services .container {
+    max-width: 1400px !important;
+  }
+  
+  #services .text-3xl.md\:text-4xl.lg\:text-5xl {
+    font-size: 3.5rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  #services .text-lg {
+    font-size: 1.25rem !important;
+  }
+  
+  #services h3.text-xl {
+    font-size: 1.5rem !important;
+  }
+  
+  #services h4.font-semibold {
+    font-size: 1.125rem !important;
+  }
+  
+  #services .p-8 {
+    padding: 2.5rem !important;
+  }
+}
+
+/* Fix for iPads and tablets in portrait mode */
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+  #services {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  #services .flex.flex-row.grid-cols-1.md\:grid-cols-3.gap-8.mb-16 {
+    gap: 1.5rem !important;
+  }
+}
+
+/* Fix for landscape-oriented mobile devices */
+@media only screen and (max-height: 450px) and (orientation: landscape) {
+  #services {
+    padding-top: 3rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  #services .grid.grid-cols-2.md\:grid-cols-3.lg\:grid-cols-6 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  #services h2.text-3xl.md\:text-4xl.lg\:text-5xl {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  #services .text-center.mb-16 {
+    margin-bottom: 2rem !important;
+  }
+  
+  #services .w-20.h-20 {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+}
+
+/* Fix for framer-motion animations on low-powered devices */
+@media (prefers-reduced-motion: reduce) {
+  #services * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Fix for high contrast mode */
+@media (forced-colors: active) {
+  #services .bg-indigo-50,
+  #services .bg-green-50,
+  #services .bg-gray-50 {
+    background-color: Canvas !important;
+    border: 1px solid CanvasText !important;
+  }
+  
+  #services .text-indigo-600,
+  #services .text-green-600,
+  #services .text-gray-600,
+  #services .text-indigo-500 {
+    color: CanvasText !important;
+  }
+}
+
+/* Fix for print media */
+@media print {
+  #services {
+    page-break-inside: avoid !important;
+  }
+  
+  #services .flex.flex-row.grid-cols-1.md\:grid-cols-3.gap-8.mb-16 {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* Fix for slow internet - avoid layout shifts */
+#services .container {
+  min-height: 200px !important;
+}
+
+#services .flex.flex-row.grid-cols-1.md\:grid-cols-3.gap-8.mb-16 > div {
+  min-height: 300px !important;
+}
+
+/* Fix hover states on touch devices to avoid sticky hover effects */
+@media (hover: none) {
+  #services .rounded-2xl:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  
+  #services .p-6.bg-gray-50.rounded-xl:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+} 

@@ -1,0 +1,164 @@
+/* Responsive styles for Services component that maintain existing design */
+
+/* Fix the main issue with the flex layout that should be a grid */
+@media screen and (min-width: 768px) {
+  #services .flex.flex-row.grid-cols-1.md\:grid-cols-3.gap-8.mb-16 {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* Extra small devices (phones, less than 640px) */
+@media screen and (max-width: 639px) {
+  #services {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  #services .flex.flex-row.grid-cols-1.md\:grid-cols-3.gap-8.mb-16 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+  
+  #services .text-3xl.md\:text-4xl.lg\:text-5xl {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
+  }
+  
+  #services .text-lg {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+  }
+  
+  #services .grid.grid-cols-2.md\:grid-cols-3.lg\:grid-cols-6 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+  
+  #services .p-6 {
+    padding: 0.75rem !important;
+  }
+  
+  #services .p-8 {
+    padding: 1.5rem !important;
+  }
+  
+  #services h3.text-xl {
+    font-size: 1.25rem !important;
+  }
+  
+  #services h4.font-semibold {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Small devices (tablets, 640px to 767px) */
+@media screen and (min-width: 640px) and (max-width: 767px) {
+  #services .flex.flex-row.grid-cols-1.md\:grid-cols-3.gap-8.mb-16 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+  
+  #services .grid.grid-cols-2.md\:grid-cols-3.lg\:grid-cols-6 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* Medium devices (tablets, 768px to 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #services .container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  #services .grid.grid-cols-2.md\:grid-cols-3.lg\:grid-cols-6 {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1rem !important;
+  }
+  
+  #services .p-6 {
+    padding: 1rem !important;
+  }
+}
+
+/* Large devices (desktops, 1024px to 1279px) */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  #services .grid.grid-cols-2.md\:grid-cols-3.lg\:grid-cols-6 {
+    grid-template-columns: repeat(6, 1fr) !important;
+  }
+}
+
+/* Fix card height consistency on all devices */
+#services .flex.flex-row.grid-cols-1.md\:grid-cols-3.gap-8.mb-16 > div {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#services .flex.flex-row.grid-cols-1.md\:grid-cols-3.gap-8.mb-16 > div > p {
+  flex-grow: 1 !important;
+}
+
+/* Ensure proper spacing on mobile */
+@media screen and (max-width: 639px) {
+  #services .mb-16 {
+    margin-bottom: 3rem !important;
+  }
+  
+  #services .mt-16 {
+    margin-top: 3rem !important;
+  }
+  
+  #services .mb-10 {
+    margin-bottom: 2rem !important;
+  }
+}
+
+/* Fix for the decorative elements positioning on mobile */
+@media screen and (max-width: 767px) {
+  #services .absolute.top-20.left-10,
+  #services .absolute.top-20.right-10,
+  #services .absolute.top-32.right-1\/4 {
+    display: none !important;
+  }
+}
+
+/* Make sure images stay within bounds on small screens */
+#services svg,
+#services img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Ensure proper touch target size on mobile */
+@media (pointer: coarse) {
+  #services button,
+  #services a,
+  #services .flex.flex-wrap.justify-center.gap-2.mt-6 > span {
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* Fix for service cards on landscape-oriented mobile devices */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  #services {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  #services .mb-16 {
+    margin-bottom: 2rem !important;
+  }
+  
+  #services .p-8 {
+    padding: 1rem !important;
+  }
+  
+  #services .container {
+    max-width: 95% !important;
+  }
+} 
