@@ -10,6 +10,8 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/free-mode';
+// Import custom styles
+import '../styles/Testimonials.css';
 
 // Testimonial data
 const testimonials = [
@@ -152,8 +154,8 @@ const Testimonials = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-10">
-          <p className="uppercase text-[#6C63FF] text-sm font-medium tracking-wider mb-2">TESTIMONIALS</p>
-          <h2 className="text-4xl font-bold text-gray-800">What People Say About Me</h2>
+          <p className="uppercase text-[#6C63FF] text-sm font-medium tracking-wider mb-2">Reviews & Recommendations</p>
+          <h2 className="text-4xl font-bold text-gray-800">“These are the words of people I’ve worked with — their feedback means a lot and shows the kind of work I aim to deliver every time.”</h2>
         </div>
         
         {/* Testimonial cards with Swiper */}
