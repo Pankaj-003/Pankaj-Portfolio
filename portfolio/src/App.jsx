@@ -8,6 +8,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
+import Testimonials from './components/Testimonials';
 import './index.css';
 import './styles.css';
 import './custom.css';
@@ -28,7 +29,7 @@ function App() {
   // Track active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'About', 'services', 'Projects', 'Contact'];
+      const sections = ['home', 'About', 'services', 'Projects', 'testimonials', 'Contact'];
       const scrollPosition = window.scrollY + 100; // offset for better accuracy
       
       // Check each section
@@ -85,6 +86,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Skills />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
