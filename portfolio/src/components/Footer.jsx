@@ -1,5 +1,5 @@
 import React from 'react';
-import "../footer.css"
+import "../styles/footer.css"
 import arrow from "../assets/images/FooterArrow.png"
 import star from "../assets/images/FooterStar.png"
 

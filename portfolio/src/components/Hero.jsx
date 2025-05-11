@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaYoutube, FaFacebook } from 'react-icons/fa';
 import profileImg from '../assets/images/HeroSection.png'; // Your profile image
 import ArrowImgone from '../assets/images/Arrow1.png';
-import '../Navbar.css';
-import '../HeroResponsive.css';
-import '../hero-fixes.css';
+import '../styles/Navbar.css';
+import '../styles/HeroResponsive.css';
+import '../styles/hero-fixes.css';
 
 const Hero = () => {
   const socialLinks = [

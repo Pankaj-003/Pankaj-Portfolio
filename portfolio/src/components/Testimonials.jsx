@@ -21,7 +21,7 @@ const testimonials = [
     position: "CTO at TechVision Inc.",
     avatar: "https://randomuser.me/api/portraits/women/32.jpg",
     stars: 5,
-    text: "Working with this developer was an exceptional experience. Their expertise in React and modern web technologies transformed our platform completely. The attention to detail, clean code architecture, and ability to deliver complex features ahead of schedule exceeded our expectations. What truly sets them apart is their proactive approach to solving problems and suggesting innovative solutions."
+    text: "Working with this developer was an exceptional experience. Their expertise in React and modern web technologies transformed our platform completely. ."
   },
   {
     id: 2,
@@ -155,7 +155,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-10">
           <p className="uppercase text-[#6C63FF] text-sm font-medium tracking-wider mb-2">Reviews & Recommendations</p>
-          <h2 className="text-4xl font-bold text-gray-800">“These are the words of people I’ve worked with — their feedback means a lot and shows the kind of work I aim to deliver every time.”</h2>
+          <h2 className="text-4xl font-bold text-gray-800">What People Say About Me</h2>
         </div>
         
         {/* Testimonial cards with Swiper */}
@@ -198,18 +198,15 @@ const Testimonials = () => {
             breakpoints={{
               320: {
                 slidesPerView: 1.2,
-                spaceBetween: 20,
-                centeredSlides: true
+                spaceBetween: 20
               },
               640: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-                centeredSlides: true
+                slidesPerView: 1.5,
+                spaceBetween: 30
               },
               1024: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-                centeredSlides: true
+                slidesPerView: 2.5,
+                spaceBetween: 40
               }
             }}
             className="testimonials-swiper"
@@ -217,52 +214,51 @@ const Testimonials = () => {
             {testimonials.map((testimonial) => (
               <SwiperSlide key={testimonial.id}>
                 <motion.div 
-                  className="testimonial-card bg-white rounded-lg p-6 h-full"
-                  whileHover={{ 
-                    scale: 1.03,
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                  }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 15
-                  }}
+                  className="testimonial-card bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                 >
-                  {/* Star Rating */}
-                  <div className="flex mb-4 star-rating">
-                    {[...Array(testimonial.stars)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: i * 0.1 }}
-                        className="star"
-                      >
-                        <FaStar className="text-yellow-400 mr-1" />
-                      </motion.div>
-                    ))}
+                  {/* Quote icon */}
+                  <div className="absolute -top-4 -left-4 w-8 h-8 bg-[#6C63FF] rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
                   </div>
                   
-                  {/* Testimonial Text */}
-                  <p className="text-gray-600 mb-6 testimonial-text">
-                    {testimonial.text}
-                  </p>
-                  
-                  {/* Person Info */}
-                  <div className="flex items-center mt-auto">
-                    <div className="relative avatar-container">
-                      <div className="absolute -inset-1 bg-gradient-to-r from-[#6C63FF] to-purple-500 rounded-full opacity-20 blur-sm"></div>
+                  {/* Avatar and name section */}
+                  <div className="flex items-center mb-6">
+                    <div className="relative">
                       <img 
                         src={testimonial.avatar} 
                         alt={testimonial.name}
-                        className="w-12 h-12 rounded-full mr-4 object-cover relative z-10 border-2 border-white avatar-image"
-                        onLoad={(e) => e.target.classList.add('loaded')}
+                        className="w-16 h-16 rounded-full object-cover border-4 border-[#6C63FF]/10"
                       />
+                      <div className="absolute -bottom-2 -right-2 bg-[#6C63FF] rounded-full p-1">
+                        <FaStar className="w-3 h-3 text-white" />
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 testimonial-name">{testimonial.name}</h4>
-                      <p className="text-gray-500 text-sm testimonial-position">{testimonial.position}</p>
+                    <div className="ml-4">
+                      <h3 className="font-bold text-gray-800">{testimonial.name}</h3>
+                      <p className="text-sm text-gray-600">{testimonial.position}</p>
                     </div>
+                  </div>
+
+                  {/* Rating stars */}
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.stars)].map((_, index) => (
+                      <FaStar key={index} className="text-yellow-400 w-4 h-4" />
+                    ))}
+                  </div>
+
+                  {/* Testimonial text */}
+                  <div className="relative">
+                    <p className="text-gray-600 leading-relaxed">
+                      {testimonial.text}
+                    </p>
+                    {/* Decorative elements */}
+                    <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-[#6C63FF]/5 rounded-full"></div>
+                    <div className="absolute -bottom-4 -right-4 w-8 h-8 bg-[#6C63FF]/10 rounded-full"></div>
                   </div>
                 </motion.div>
               </SwiperSlide>

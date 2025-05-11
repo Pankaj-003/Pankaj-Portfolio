@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaDatabase, FaCode, FaServer, FaMobileAlt } from 'react-icons/fa';
 import { SiExpress, SiMongodb, SiJavascript, SiTypescript, SiGraphql } from 'react-icons/si';
-import '../services-responsive.css';
-import '../services-edge-fixes.css';
-import '../services-animations.css';
+import '../styles/services-responsive.css';
+import '../styles/services-edge-fixes.css';
+import '../styles/services-animations.css';
 
 const Services = () => {
   const cardVariants = {

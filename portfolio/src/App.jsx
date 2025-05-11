@@ -9,11 +9,11 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import Testimonials from './components/Testimonials';
-import './index.css';
-import './styles.css';
-import './custom.css';
-import './navbar-fix.css';
-import './responsive-utils.css';
+import './styles/index.css';
+import './styles/styles.css';
+import './styles/custom.css';
+import './styles/navbar-fix.css';
+import './styles/responsive-utils.css';
 
 function App() {
   const [loading, setLoading] = useState(true);

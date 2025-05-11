@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaDatabase, FaReact, FaServer } from 'react-icons/fa';
-import '../Process.css';
+import '../styles/process.css';
 // Updated process steps to reflect MERN stack development
 const processSteps = [
   {
