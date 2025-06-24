@@ -1,0 +1,275 @@
+/* Professional Skills Section Styling */
+.skills-section {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section Header */
+.skill-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #2d3748;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background: #4A6CF7;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #718096;
+  max-width: 700px;
+  margin: 15px auto 0;
+  line-height: 1.6;
+}
+
+/* Skills Grid Layout */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* Category Styling */
+.category-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  transition: transform 0.2s ease;
+}
+
+.category-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+.category-header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+
+.category-title {
+  font-size: 1.4rem;
+  color: #2d3748;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-icon {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Skill Item */
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.skill-item.vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.skill-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skill-icon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.skill-info h4 {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.progress-wrapper {
+  width: 100%;
+  padding-left: 42px; /* Aligns with the skill text indentation */
+}
+
+/* Progress Bar */
+.progress-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background-color: #edf2f7;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 30px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: shine 2s infinite;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill.animated {
+  animation: pulse 2s infinite;
+}
+
+.progress-text {
+  min-width: 35px;
+  text-align: right;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a5568;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease-out;
+}
+
+.progress-text.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(400%);
+    opacity: 0;
+  }
+}
+
+@keyframes countUp {
+  from {
+    content: "0%";
+  }
+  to {
+    content: attr(data-percentage);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .skills-section {
+    padding: 50px 0;
+  }
+  
+  .skill-header {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .category-title {
+    font-size: 1.2rem;
+  }
+  
+  .category-container {
+    padding: 20px;
+  }
+  
+  .progress-wrapper {
+    padding-left: 30px;
+  }
+}
