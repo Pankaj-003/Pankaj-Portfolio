@@ -9,7 +9,7 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import Testimonials from './components/Testimonials';
-import './styles/index.css';
+import './index.css';
 import './styles/styles.css';
 import './styles/custom.css';
 import './styles/navbar-fix.css';
@@ -26,7 +26,7 @@ function App() {
     }, 1500);
   }, []);
 
-  // Track active section based on scroll position
+  // Track active section based on scroll position test
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'About', 'services', 'Projects', 'testimonials', 'Contact'];
