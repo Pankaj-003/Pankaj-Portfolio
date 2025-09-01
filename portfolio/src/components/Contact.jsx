@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { MdEmail, MdPhone, MdLocationOn, MdClose } from 'react-icons/md';
-import ContactImage from '../assets/images/contact.png';
+import ContactImage from '../assets/images/Contact.png';
 // import "../styles/Contact.css"
 import "../styles/Contact.css";
 import "../styles/ContactAnimations.css";
