@@ -1,0 +1,103 @@
+/* Responsive styles for Hero component that maintain existing styling */
+
+
+.main-circle-shape {
+  width: 300px;
+  height: 300px;
+
+  border: 1px solid #090909;
+  top: 25%;
+  right: 60px;
+}
+.small-shape {
+  border: 1px solid #090909;
+
+  height: 150px;
+  width: 150px;
+  top: 72%;
+  left: 14%;
+}
+.dot-b {
+
+  bottom: 0;
+  right: -25%;
+ 
+  top: 60%;
+}
+.dot-t {
+
+  left: 5%;
+}
+
+.arrow1 {
+ 
+  top: 10%;
+  left: -6%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+}
+
+.progle-main {
+  /* border: 1px solid #f66e6e; */
+  height: 600px;
+  left: 100px;
+}
+
+/* media responsive ===================== */
+
+@media screen and (max-width: 480px) {
+  #home {
+    margin-bottom: -82px;
+  }
+  .hero-text-main {
+  
+    position: relative;
+  }
+  .main-circle-shape {
+
+    top: 20%;
+    right: 40px;
+    height: 200px;
+    width: 200px;
+  }
+  .small-shape {
+    border: 1px solid #090909;
+
+    height: 100px;
+    width: 100px;
+    top: 72%;
+    left: 14%;
+  }
+  .hero-main {
+    border: 1px solid #090909;
+    margin-top: -20px;
+  }
+  .text-content {
+   
+    text-align: center;
+  }
+
+  .socail {
+   
+    justify-content: center;
+  }
+  .dot-b-main {
+   
+    display: none;
+  }
+  .arrow1 {
+    /* border: 1px solid #090909; */
+    display: none;
+  }
+  .progle-main {
+    position: absolute;
+    /* border: 1px solid #6ef6b2; */
+    height: 400px;
+    top: 0;
+    left: 50px;
+  }
+  .dot-t {
+    display: none;
+  }
+}

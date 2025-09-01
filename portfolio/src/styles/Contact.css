@@ -784,6 +784,10 @@
 
 /* Small devices (landscape phones, less than 576px) */
 @media (max-width: 576px) {
+  .contact-main-image{
+    display: none;
+  }
+  
   .contact-main-section {
     padding-top: 40px;
   }

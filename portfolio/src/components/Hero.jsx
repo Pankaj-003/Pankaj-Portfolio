@@ -3,8 +3,8 @@ import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaYoutube, FaFacebook } f
 import profileImg from '../assets/images/HeroSection.png'; // Your profile image
 import ArrowImgone from '../assets/images/Arrow1.png';
 import '../styles/Navbar.css';
-import '../styles/HeroResponsive.css';
-import '../styles/hero-fixes.css';
+import '../styles/Hero.css';
+// import '../styles/hero-fixes.css';
 
 const Hero = () => {
   const socialLinks = [
@@ -129,10 +129,10 @@ const Hero = () => {
             </div>
 
       {/* Main content container */}
-      <div className="container mx-auto relative z-10">
+      <div className="container hero-text-main mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-center">
           {/* Left text content */}
-          <div className="md:w-1/2 z-10">
+          <div className="md:w-1/2 z-10 text-content">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -185,13 +185,13 @@ const Hero = () => {
 
             {/* Social Media Links */}
             <motion.div 
-              className="mb-8"
+              className="mb-8 socail-media"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
               <h3 className="text-white text-lg font-medium mb-4">Connect With Me</h3>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap socail gap-4">
                 {socialLinks.map(({ icon: Icon, url, color, hoverColor, delay }) => (
                   <motion.a
                     key={url}
@@ -234,10 +234,10 @@ const Hero = () => {
           </div>
           
           {/* Right image with decorative elements */}
-          <div className="md:w-1/2 mt-10 md:mt-0 relative">
+          <div className="md:w-1/2 mt-10 righ-image-mian md:mt-0 relative">
             {/* Main orange blob */}
             <motion.div 
-              className="absolute main-circle-shape  w-[300px] h-[300px] bg-gradient-to-br from-[#ffa62b] to-[#ff8a00] rounded-full opacity-90 z-0 blur-[2px]"
+              className="absolute main-circle-shape  bg-gradient-to-br from-[#ffa62b] to-[#ff8a00] rounded-full opacity-90 z-0 blur-[2px]"
               animate={{ 
                 scale: [1, 1.05, 1],
                 rotate: [0, 5, 0]
