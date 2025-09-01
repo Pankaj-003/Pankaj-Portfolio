@@ -1,7 +1,8 @@
 import React from 'react';
 import "../styles/footer.css"
 import arrow from "../assets/images/FooterArrow.png"
-import star from "../assets/images/FooterStar.png"
+// import star from "../assets/images/FooterStar.png"
+import star from '../assets/images/Footerstar.png'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
